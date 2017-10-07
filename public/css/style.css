@@ -1,0 +1,169 @@
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+/*===================================*/
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 450px}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;} 
+}
+/*==========================*/
+/*======= List room ========*/
+/*==========================*/
+.list-room{
+
+}
+.list-room .name-room p{
+    text-align: center;
+}
+.list-room .name-room a{
+    font-size: 20px;
+    line-height: 80px;
+    width: 100%;
+}
+.create-room{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*==========================*/
+/*======= Ranking ========*/
+/*==========================*/
+
+ul, li{
+    list-style: none;
+}
+.ranking{
+
+}
+.ranking .no-1{
+    font-size: 30px;
+    line-height: 30px;
+}
+.ranking .no-1 .badge{
+    font-size: 20px;
+}
+
+.ranking .no-2{
+    font-size: 25px;
+    line-height: 25px;
+}
+.ranking .no-2 .badge{
+    font-size: 15px;
+}
+
+.ranking .no-3{
+    font-size: 20px;
+    line-height: 20px;
+}
+.ranking .no-3 .badge{
+    font-size: 10px;
+}
+
+/*==========================*/
+/*======= Game playing ========*/
+/*==========================*/
+.ranking-tmp{
+    text-align: left;
+}
+.ranking-tmp .no-1{
+    color: red;
+}
+.ranking-tmp .no-2{
+    color: green;
+}
+.ranking-tmp .no-3{
+    color: blue;
+}
+.matrix .number {
+    width: 80px;
+    margin: 5px;
+    font-size: 35px;
+}
+@media only screen and (max-width: 1100px) {
+    .matrix .number {
+        width: 60px;
+        margin: 5px;
+        font-size: 25px;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .matrix .number {
+        width: 40px;
+        margin: 5px;
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .matrix .number {
+        width: 20px;
+        margin: 5px;
+        font-size: 10px;
+    }
+}
