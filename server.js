@@ -6,7 +6,7 @@ var io=require('socket.io').listen(http);
 app.use(express.static(__dirname + ''));
 
 io.on('connection',function (socket) {
-
+    
 });
 
 
