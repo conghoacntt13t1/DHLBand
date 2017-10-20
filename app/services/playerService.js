@@ -9,6 +9,8 @@ app.service('playerService', function () {
             name:name,
             score:0
         })
+
+        return topID;
     };
     this.deletePlayer=function (id) {
         for (var i=playerList.length - 1; i >= 0; i--){

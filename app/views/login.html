@@ -27,22 +27,16 @@
                 </div>
                 <div class="form-name">
 					<div class="">
-						<form action="" method="POST" role="form" class="form-inline">
+						
 							<div class="form-group">
-								<input type="text" class="form-control" id="" placeholder="Enter Your Name..." required>
+								<input type="text" class="form-control" id="" placeholder="Enter Your Name..." required data-ng-model="name">
 							</div>
-							<button type="submit" class="btn btn-primary">Play</button>
-						</form>
+							<button type="submit" class="btn btn-primary" data-ng-disabled="!name" data-ng-click="insertPlayer()">Play</button>
+						
 					</div>
 				</div>
             </div>
         </div>
-		<!-- jQuery -->
-		<script src="js/jquery-3.2.1.min.js"></script>
-		<!-- Popper -->
-		<script src="js/popper.min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="js/bootstrap.js"></script>
     </body>
 </html>
 
