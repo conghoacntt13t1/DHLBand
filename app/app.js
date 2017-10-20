@@ -3,6 +3,11 @@ var app = angular.module('MyGame', ['ngRoute']);
 //This configures the routes and associates each route with a view and a controller
 app.config(function ($routeProvider) {
     $routeProvider
+        .when('/',
+            {
+                controller: 'LoginController',
+                templateUrl: 'app/views/login.html'
+            })
         .when('/game',
             {
                 controller: 'GameController',
