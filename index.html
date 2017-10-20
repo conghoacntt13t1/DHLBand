@@ -18,7 +18,7 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="#">Hello, Nguyen Van A</a>
+                        <a href="#/game">Hello, Nguyen Van A</a>
                     </li>
                     <li>
                         <a href="#"><span class="glyphicon glyphicon-log-out"></span> Sign Out</a>
@@ -28,17 +28,27 @@
         </nav>
     </div>
 
-    <div class="container text-center">
-        <div class="row content"></div>
-    </div>
+    <!-- Note that AngularJS 1.2+ now has a built-in ng-animation direction. Left in animated-view to show a 
+         custom directive -->
+    <div animated-view></div>
 
     <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+        <p>Copyrigh DHL Band @ 2017</p>
     </footer>
 
     <script src="public/js/jquery-3.2.1.min.js"></script>
     <script src="public/js/popper.min.js"></script>
     <script src="public/js/bootstrap.js"></script>
     <script src="public/js/angular.min.js"></script>
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/game.controllers.js"></script>
+    <script src="app/controllers/ranking.controllers.js"></script>
+    <script src="app/controllers/login.controllers.js"></script>
+    <script src="app/controllers/room.controllers.js"></script>
+  
+
+    <script src="app/services/gameService.js"></script>
 </body>
 </html>
