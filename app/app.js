@@ -8,12 +8,12 @@ app.config(function ($routeProvider) {
                 controller: 'LoginController',
                 templateUrl: 'app/views/login.html'
             })
-        .when('/game',
+        .when('/game/:roomID',
             {
                 controller: 'GameController',
                 templateUrl: '/app/views/game.html'
             })
-        .when('/ranking',
+        .when('/ranking/:roomID',
             {
                 controller: 'RankingController',
                 templateUrl: 'app/views/ranking.html'
