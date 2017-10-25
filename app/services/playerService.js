@@ -5,29 +5,29 @@ app.service('playerService', function () {
     this.insertPlayer=function (name) {
         var topID=playerList.length+1;
         playerList.push({
-            id: topID,
+            playerID: topID,
             name:name,
             score:0
         })
     };
-    this.deletePlayer=function (id) {
+    this.deletePlayer=function (playerID) {
         for (var i=playerList.length - 1; i >= 0; i--){
-            if (playerList[i].id==id){
+            if (playerList[i].playerID===playerID){
                 playerList.splice(i,1);
             }
         }
     };
-    this.getPlayer=function (id) {
+    this.getPlayer=function (playerID) {
         for (var i = 0; i<playerList.length; i++){
-            if (playerList[i].id===id){
+            if (playerList[i].playerID===playerID){
                 return playerList[i];
             }
         }
         return null;
     };
-    this.editPlayerScore=function (id) {
+    this.editPlayerScore=function (playerID) {
         for (var i = 0; i<playerList.length; i++){
-            if(playerList[i].id===id){
+            if(playerList[i].playerID===playerID){
                 return playerList[i].score;
             }
         }
@@ -38,5 +38,5 @@ app.service('playerService', function () {
         {
             
         }
-    ]
+    ];
 });
