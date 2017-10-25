@@ -13,7 +13,7 @@ app.config(function ($routeProvider) {
                 controller: 'GameController',
                 templateUrl: '/app/views/game.html'
             })
-        .when('/ranking',
+        .when('/ranking/:roomID',
             {
                 controller: 'RankingController',
                 templateUrl: 'app/views/ranking.html'
