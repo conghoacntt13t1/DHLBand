@@ -8,6 +8,7 @@ app.controller('LoginController', function ($scope,playerService) {
     $scope.insertPlayer = function () {
         idCurrent = playerService.insertPlayer($scope.name);
         console.log(idCurrent);
+        window.location.replace("/#!/room");
     };
 
     $scope.deletePlayer = function (id) {

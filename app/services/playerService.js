@@ -37,8 +37,5 @@ app.service('playerService', function () {
     };
 
     var playerList=[
-        {
-            
-        }
     ]
 });

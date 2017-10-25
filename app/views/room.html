@@ -1,77 +1,37 @@
 <div class="container text-center">
 	<div class="row content">
 		<div class="col-sm-12 text-left"> 
-			<h1 class="pull-left">Room</h1>
-			<p class="pull-right create-room">
-				<a href="" class="btn btn-info">Create new room...</a>
-			</p>
+			<h1 class="pull-left">
+				<form class="form-inline">
+				Room
+				<input type="text" class="form-control" data-ng-model="nameRoom" placeholder="Search the room">
+				</form>
+			</h1>
+			<div class="pull-right create-room">
+				
+				<form class="form-inline">
+
+                Create room: <input type="text" class="form-control" data-ng-model="nameRoom">
+
+				<button class="btn btn-primary" type="button" data-ng-disabled="!nameRoom"
+                    data-ng-click="insertRoom()">Add Customer</button>
+
+                </form>
+			</div>
 			<div class="clearfix"></div>
 			<hr>
 			<div class="row list-room">
-				<div class="col-sm-3">
+			
+				<div class="col-sm-3" data-ng-repeat="room in rooms  | orderBy:'id' | filter:nameRoom"">
 					<div class="name-room">
 						<p>
 							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
+							<a href="#!/game/{{room.id}}" class="btn btn-success">{{room.name}}</a>
+							<a href="" data-ng-click="deleteRoom(room.id)">Delete</a>
 						</p>
 					</div>
 				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
-				<div class="col-sm-3">
-					<div class="name-room">
-						<p>
-							<br>
-							<a href="" class="btn btn-success">Velit deleniti!</a>
-						</p>
-					</div>
-				</div>
+				
 
 			</div>
 		</div>
