@@ -1,4 +1,4 @@
-<div class="container text-center">
+<div class="container text-center" ng-controller="RoomController">
 	<div class="row content">
 		<div class="col-sm-12 text-left"> 
 			<h1 class="pull-left">
@@ -26,12 +26,15 @@
 					<div class="name-room">
 						<p>
 							<br>
-							<a href="#!/game/{{room.id}}" class="btn btn-success">{{room.name}}</a>
+							<div data-ng-click="btnRoomOnClick(room.id)">
+                                <!--<a href="#" class="btn btn-success" >{{room.name}}</a>-->
+                                <button class="btn btn-success">{{room.name}}</button>
+                            </div>
 							<a href="" data-ng-click="deleteRoom(room.id)">Delete</a>
 						</p>
 					</div>
 				</div>
-				
+
 
 			</div>
 		</div>

@@ -1,4 +1,4 @@
-app.controller('RoomController', function ($scope,roomService) {
+app.controller('RoomController', function ($scope,$http,$location,roomService,gameService) {
     init();
 
     function init() {
@@ -6,7 +6,7 @@ app.controller('RoomController', function ($scope,roomService) {
     }
 
     $scope.insertRoom = function () {
-        idCurrent = roomService.insertRoom($scope.nameRoom);
+        var idCurrent = roomService.insertRoom($scope.nameRoom);
         console.log(idCurrent);
     };
 
@@ -19,4 +19,14 @@ app.controller('RoomController', function ($scope,roomService) {
         roomService.joinRoom(id);
         console.log($scope.rooms);
     };
+
+    $scope.btnRoomOnClick=function (id) {
+        console.log(id);
+        $location.path("/game/"+id);
+        $http.get("/game").then(function (response) {
+
+            gameService.setExpressions(response.data);
+            console.log(response.data);
+        });
+    }
 });
