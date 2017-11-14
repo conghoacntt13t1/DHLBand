@@ -26,16 +26,14 @@
 					<div class="name-room">
 						<p>
 							<br>
-							<div data-ng-click="btnRoomOnClick(room.id)">
+							<div>
                                 <!--<a href="#" class="btn btn-success" >{{room.name}}</a>-->
-                                <button class="btn btn-success">{{room.name}}</button>
+                                <button class="btn btn-success"  data-ng-click="btnRoomOnClick(room.id)">{{room.name}}</button>
                             </div>
 							<a href="" data-ng-click="deleteRoom(room.id)">Delete</a>
 						</p>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>

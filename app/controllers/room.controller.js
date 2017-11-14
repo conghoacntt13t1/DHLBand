@@ -21,12 +21,24 @@ app.controller('RoomController', function ($scope,$http,$location,roomService,ga
     };
 
     $scope.btnRoomOnClick=function (id) {
-        console.log(id);
-        $location.path("/game/"+id);
-        $http.get("/game").then(function (response) {
-
-            gameService.setExpressions(response.data);
-            console.log(response.data);
+        console.log("Room id : "+id);
+        // $http.get("/game").then(function successCallback(response) {
+        //     gameService.setExpressions(response.data);
+        //     console.log(response.data);
+        // }, function errorCallback(response){
+        //     console.log(response);
+        // });
+        getData('/game', function(data) {
+            console.log("abc");
+            console.log(data.data);
+            gameService.setExpressions(data.data);
         });
-    }
+        $location.path("/game/"+id);
+    };
+
+    var getData = function(url, callback) {
+        $http.get(url).then(function(response) {
+            callback && callback(response);
+        });
+    };
 });

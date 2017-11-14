@@ -17,9 +17,10 @@ http.listen(16969,function () {
 });
 //
 var utils = require('./Server/utils');
+var data = utils.getExpressionList();
+console.log(data);
 app.get("/game",function (request, response) {
-    console.log(utils.getExpressionList());
-    response.send(utils.getExpressionList());
+    response.send(data);
     // response.redirect("/game");
 });
 require('./Server/socket.js')(http);
