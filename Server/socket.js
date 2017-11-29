@@ -10,6 +10,7 @@ module.exports = function (server) {
             
         });
 
+        socket.on('createTable')
 
     });
 };

@@ -10,16 +10,20 @@ app.use(express.static(__dirname + ''));
 //
 // });
 
-
-
 http.listen(16969,function () {
     console.log("The Server is listening at port: 16969");
 });
 //
-var utils = require('./Server/utils');
-var data = utils.getExpressionList();
+// var utils = require('./Server/utils');
+// var data = utils.getExpressionList();
+
+var game = require('./Server/Game');
+
+app.use('/game',game);
+
 console.log(data);
 app.get("/game",function (request, response) {
+
     response.send(data);
     // response.redirect("/game");
 });

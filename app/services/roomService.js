@@ -1,41 +1,4 @@
 app.service('roomService',function () {
-    // this.getRommList=function () {
-    //     return roomList;
-    // };
-    //
-    // this.getRoom = function(roomID){
-    //     for(var i=0; i<roomList.length;i++){
-    //         if(roomList[i].roomID===roomID){
-    //             return roomList[i];
-    //         }
-    //     }
-    //     return null;
-    // };
-    //
-    // this.insertRoom=function (roomName) {
-    //     var topRoomID=roomList.length+1;
-    //     roomList.push({
-    //         roomID:topRoomID,
-    //         roomName:roomName,
-    //         playerListInRoom:[
-    //             {
-    //
-    //             }
-    //         ]
-    //     })
-    // };
-
-    // var roomList=[
-    //     {
-    //         roomID: "R01",
-    //         name: "Room 01",
-    //         playerListInRoom: [
-    //             {
-    //
-    //             }
-    //         ]
-    //     }
-    // ];
 
 	this.getRoomList=function () {
         return roomList;
@@ -60,15 +23,15 @@ app.service('roomService',function () {
     var roomList=[
 	    {
 	    	id: 1,
-	    	name: 'Lorem Ipsum'	
+	    	name: 'Vào room'
 	    },
 	    {
 	    	id: 2,
-	    	name: 'Foo Bar'	
+	    	name: 'Vào room'
 	    },
 	    {
 	    	id: 3,
-	    	name: 'Vempors'	
+	    	name: 'vào room'
 	    }
     ]
 

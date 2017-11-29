@@ -13,9 +13,10 @@ app.controller('GameController', function ($scope,$http,gameService) {
 
     var gameValue=[];
 
+    var tableIndex = [];
+
     function initGame() {
-        initGameTable();
-        // initGameExpressions();
+        initGameExpressions();
     }
 
 
@@ -26,14 +27,6 @@ app.controller('GameController', function ($scope,$http,gameService) {
                 $scope.currentExpression = gameExpressions[index];
                 console.log($scope.currentExpression);
             });
-
-            for (var i=0;i<3;i++){
-                var tempIndex;
-                // do{
-                //     tempIndex = randomAnInt(0,gameExpressions.length-1);
-                //     console.log(tempIndex);
-                // }while (gameExpressions && checkSameValue(gameExpressions[tempIndex].data))
-            }
         });
     }
 
@@ -56,19 +49,14 @@ app.controller('GameController', function ($scope,$http,gameService) {
 
     function initGameTable() {
 
-        for (var i=0;i<9;i++){
+        for (var i=0;i<5;i++){
             $scope.gameTable[i]=[];
-            for (var j=0;j<9;j++){
+            for (var j=0;j<5;j++){
                 var spot={};
                 spot.data='-';
                 // spot.col=j;
                 $scope.gameTable[i][j]=spot;
             }
-        }
-
-        for(var count = 0; count < 3; count++){
-            // console.log(count+"\n");
-            randomAValue();
         }
 
         console.log($scope.gameTable);

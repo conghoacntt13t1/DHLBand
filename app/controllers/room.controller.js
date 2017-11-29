@@ -29,10 +29,9 @@ app.controller('RoomController', function ($scope,$http,$location,roomService,ga
         //     console.log(response);
         // });
         getData('/game', function(data) {
-            console.log("abc");
-            console.log(data.data);
             gameService.setExpressions(data.data);
         });
+
         $location.path("/game/"+id);
     };
 
