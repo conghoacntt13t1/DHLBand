@@ -1,7 +1,7 @@
 //Global variables
 var JSONFile = require('jsonfile');
 var fileName = "./data.json";
-var expressionsList = [];
+// var expressionsList = [];
 
 module.exports = {
 
@@ -10,11 +10,10 @@ module.exports = {
         return json;
     },
 
-    randomAnInteger:function (min, max) {
+    randomAnInteger: function (min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
-
 
 };

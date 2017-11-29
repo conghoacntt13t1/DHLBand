@@ -22,14 +22,10 @@ app.controller('RoomController', function ($scope,$http,$location,roomService,ga
 
     $scope.btnRoomOnClick=function (id) {
         console.log("Room id : "+id);
-        // $http.get("/game").then(function successCallback(response) {
-        //     gameService.setExpressions(response.data);
-        //     console.log(response.data);
-        // }, function errorCallback(response){
-        //     console.log(response);
-        // });
+
         getData('/game', function(data) {
-            gameService.setExpressions(data.data);
+            console.log(data);
+            gameService.setGameTable(data.data);
         });
 
         $location.path("/game/"+id);

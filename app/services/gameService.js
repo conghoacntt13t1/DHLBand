@@ -1,6 +1,7 @@
 app.service('gameService',function () {
 
     var gameExpressions = [];
+    var gameTable;
 
     var getExpressions  = function (){
         return gameExpressions;
@@ -14,10 +15,20 @@ app.service('gameService',function () {
         gameExpressions=expressions;
     };
 
+    var setGameTable=function (gameTable) {
+        this.gameTable = gameTable;
+    };
+
+    var getGameTable=function () {
+        return this.gameTable;
+    };
+
     return {
         getExpressions:getExpressions,
         addAnExpression:addAnExpression,
-        setExpressions:setExpressions
+        setExpressions:setExpressions,
+        setGameTable:setGameTable,
+        getGameTable:getGameTable
     }
 
 });

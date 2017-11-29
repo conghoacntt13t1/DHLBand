@@ -12,8 +12,8 @@
 				<div class="clearfix"></div>
 				<div class="matrix text-center" ng-repeat="rows in gameTable">
 					<span ng-repeat="spot in rows" data-ng-click="spotOnClick(spot)">
-						<a class="btn btn-default number" ng-if="spot.data === '-'" >-</a>
-						<a class="btn btn-info number" ng-if="spot.data !== '-'">{{spot.data}}</a>
+						<a class="btn btn-default number" ng-if="spot === '-'" >-</a>
+						<a class="btn btn-info number" ng-if="spot !== '-'">{{spot}}</a>
 					</span>
 				</div>
 			</div>
