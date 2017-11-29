@@ -25,7 +25,9 @@ app.controller('RoomController', function ($scope,$http,$location,roomService,ga
 
         getData('/game', function(data) {
             console.log(data);
-            gameService.setGameTable(data.data);
+            gameService.setGameTable(data.data[0]);
+            gameService.setCurrentExpression(data.data[1]);
+            gameService.setCount(data.data[2]);
         });
 
         $location.path("/game/"+id);

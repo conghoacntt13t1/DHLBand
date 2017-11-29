@@ -8,43 +8,19 @@ app.controller('GameController', function ($scope,$http,gameService) {
     var gameExpressions = [];
     //current expression
     $scope.currentExpression = {};
+    //Current number of filled spots
+    $scope.count = 0;
+    //Total number of spots in game table
+    $scope.totalCount = 0;
 
     function initGame() {
         // initGameExpressions();
         initGameTable();
     }
 
-
-    //Read JSON file and store it to gameExpressions
-    function initGameExpressions() {
-        getExpressions(function () {
-            // console.log(gameExpressions);
-        });
-    }
-
-    var getExpressions = function (callback) {
-        gameExpressions = gameService.getExpressions();
-        // console.log(gameExpressions);
-        callback && callback (gameExpressions);
-    };
-
-
-    // function initGameTable() {
-    //     for (var i=0;i<5;i++){
-    //         $scope.gameTable[i]=[];
-    //         for (var j=0;j<5;j++){
-    //             var spot={};
-    //             spot.data='-';
-    //             // spot.col=j;
-    //             $scope.gameTable[i][j]=spot;
-    //         }
-    //     }
-    //     return getTable();
-    // }
-
     function initGameTable() {
         getGameTable(function () {
-            // console.log($scope.gameTable);
+        //    Do nothing here!
         });
     }
 
@@ -52,6 +28,9 @@ app.controller('GameController', function ($scope,$http,gameService) {
         // gameExpressions = gameService.getExpressions();
         // console.log(gameExpressions);
         $scope.gameTable=gameService.getGameTable();
+        $scope.currentExpression=gameService.getCurrentExpression();
+        $scope.count = gameService.getCount();
+        $scope.totalCount = $scope.gameTable.length * $scope.gameTable[0].length;
         callback && callback ($scope.gameTable);
     };
 

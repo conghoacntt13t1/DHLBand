@@ -5,13 +5,13 @@
 			<hr>
 			<div class="game">
 				<h2 id="question" class="pull-left">
-					3+5 = ?
+					{{currentExpression}} = ?
 					<!--{{currentExpression.math}}-->
 				</h2>	
-				<h2 class="pull-right">3/14</h2>
+				<h2 class="pull-right">{{count}}/{{totalCount}}</h2>
 				<div class="clearfix"></div>
 				<div class="matrix text-center" ng-repeat="rows in gameTable">
-					<span ng-repeat="spot in rows" data-ng-click="spotOnClick(spot)">
+					<span ng-repeat="spot in rows track by $index" data-ng-click="spotOnClick(spot)">
 						<a class="btn btn-default number" ng-if="spot === '-'" >-</a>
 						<a class="btn btn-info number" ng-if="spot !== '-'">{{spot}}</a>
 					</span>

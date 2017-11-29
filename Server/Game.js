@@ -61,40 +61,24 @@ var gameSession = function(sessionNum){
         swapArrayElements(arrOneDim, index, arrOneDim.length-1-count);
         count++;
     }
+    var gameSet = [];
+    gameSet[0] = arrTable;
+    gameSet[1] = expressionsList[index].math;
+    gameSet[2] = sessionNum;
+    return gameSet;
 };
 
 
 module.exports = {
 
     initGameTable: function () {
-        gameSession(1,arrTable,arrOneDim);
-        return arrTable;
+        var gameSet = gameSession(3,arrTable,arrOneDim);
+        return gameSet;
     },
 
     playGame: function (session, arrTable, arrOneDim) {
         gameSession(session,arrTable,arrOneDim);
     }
-    //
-    // // initFunction(arrTable, arrOneDim);
-    //
-    // expressionsList = utils.getExpressionList();
-    // var game = 0;
-    //
-    // while(game < arrOneDim.length){
-    //     var count = 0;
-    //     game++;
-    //     console.log("----GAME"+game+"------");
-    //     var index;
-    //     setNullValue(arrTable);
-    //     while(count<game){
-    //         index = utils.randomAnInteger(0, arrOneDim.length-count-1);
-    //         console.log("Value: "+expressionsList[arrOneDim[index]].value);
-    //         arrTable[Math.floor(arrOneDim[index]/(arrTable.length))][arrOneDim[index]%(arrTable[0].length)] = expressionsList[arrOneDim[index]].value.toString();
-    //         swapArrayElements(arrOneDim, index, arrOneDim.length-1-count);
-    //         count++;
-    //     }
-    //     console.log("Expression: "+expressionsList[arrOneDim[index]].math);
-    // }
 
 
 };
