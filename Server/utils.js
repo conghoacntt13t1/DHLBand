@@ -6,25 +6,15 @@ var expressionsList = [];
 module.exports = {
 
     getExpressionList: function () {
-        //  var expressions = [];
-        // var expression = {};
-        // JSONFile.readFile(fileName, function (err, JSONData) {
-        //     if(err) throw err;
-        //     expressions = JSON.stringify(JSONData);
-        //     console.log(expressions);
-        //
-        //     for(var i = 0;i<JSONData.length;i++){
-        //         expression.math=JSONData[i].math;
-        //         expression.value=JSONData[i].value;
-        //         expressions[i]=expression;
-        //         // console.log(expression);
-        //     }
-        //     expressionsList=expressions;
-        //     console.log(expressionsList);
-        // });
-        // console.log(expressions);
-        // return expressions;
         var json = JSON.parse(require('fs').readFileSync(fileName, 'utf8'));
         return json;
+    },
+
+    randomAnInteger:function (min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
     }
+
+
 };
