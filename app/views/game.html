@@ -1,53 +1,20 @@
-<div class="container text-center">
+<div class="container text-center" ng-controller="initGame">
 	<div class="row content">
 		<div class="col-sm-9 text-left"> 
 			<h1>Abc Xyz</h1>
 			<hr>
 			<div class="game">
 				<h2 id="question" class="pull-left">
-					3x5 + 8x7 = ???
+					{{currentExpression}} = ?
+					<!--{{currentExpression.math}}-->
 				</h2>	
-				<h2 class="pull-right">3/14</h2>
+				<h2 class="pull-right">{{count}}/{{totalCount}}</h2>
 				<div class="clearfix"></div>
-				<div class="matrix text-center">
-					
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a><br>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-info number">61</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a><br>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-info number">71</a><br>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-info number">67</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a><br>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-info number">34</a>
-					<a href="" class="btn btn-default number">-</a><br>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a>
-					<a href="" class="btn btn-default number">-</a><br>
-					
+				<div class="matrix text-center" ng-repeat="rows in gameTable">
+					<span ng-repeat="spot in rows" data-ng-click="spotOnClick(spot)">
+						<a class="btn btn-default number" ng-if="spot.data === '-'" >-</a>
+						<a class="btn btn-info number" ng-if="spot.data !== '-'">{{spot.data}}</a>
+					</span>
 				</div>
 			</div>
 		</div>
@@ -100,5 +67,6 @@
 			
 		</div>
 	</div>
+	<!--<script type="text/javascript" src="./public/js/socket.io.js"></script>-->
 </div>
 
