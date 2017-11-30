@@ -8,7 +8,7 @@ app.service('playerService', function () {
             playerID: topID,
             name:name,
             score:0
-        })
+        });
 
         return topID;
     };
@@ -34,6 +34,14 @@ app.service('playerService', function () {
             }
         }
         return null;
+    };
+
+    this.getPlayerID = function (playerName) {
+        for (var i = 0;i<playerList.length;i++){
+            if(playerList[i].name === playerName){
+                return playerList[i].playerID;
+            }
+        }
     };
 
     var playerList=[

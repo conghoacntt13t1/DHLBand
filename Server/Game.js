@@ -1,4 +1,4 @@
-var router = require('express').Router();
+// var router = require('express').Router();
 var utils = require('./utils');
 var expressionsList = [];
 var arrTable = [];
@@ -21,7 +21,7 @@ var swapArrayElements = function(arr, indexA, indexB) {
 };
 
 var initArray = function(){
-    //Create a 2d Array with '-' character
+
     arrTable = [];
     for(var i =0; i<4; ++i){
         arrTable[i] = [];
@@ -29,17 +29,14 @@ var initArray = function(){
             arrTable[i][j] = '-';
         }
     }
-    // console.log(arrTable);
-    // return arrTable;
+
 };
 
 var initFunction = function(){
-    //Create a 2d Array with '-' character
 
     initArray();
     console.log(arrTable);
     arrOneDim = [];
-    //Create a 1d array with index correspond index 2d Array
 
     for(var i =0; i<arrTable.length*arrTable[0].length; ++i){
         arrOneDim[i] = i;
@@ -47,18 +44,19 @@ var initFunction = function(){
 };
 
 
-var gameSession = function(sessionNum){
+var gameSession;
+gameSession = function (sessionNum) {
     initFunction();
     expressionsList = utils.getExpressionList();
     var count = 0;
     // console.log("----GAME"+game+"------");
     var index;
     setNullValue(arrTable);
-    while(count<sessionNum){
-        index = utils.randomAnInteger(0, arrOneDim.length-count-1);
-        console.log("Value: "+expressionsList[arrOneDim[index]].value);
-        arrTable[Math.floor(arrOneDim[index]/(arrTable.length))][arrOneDim[index]%(arrTable[0].length)] = expressionsList[arrOneDim[index]].value.toString();
-        swapArrayElements(arrOneDim, index, arrOneDim.length-1-count);
+    while (count < sessionNum) {
+        index = utils.randomAnInteger(0, arrOneDim.length - count - 1);
+        console.log("Value: " + expressionsList[arrOneDim[index]].value);
+        arrTable[Math.floor(arrOneDim[index] / (arrTable.length))][arrOneDim[index] % (arrTable[0].length)] = expressionsList[arrOneDim[index]].value.toString();
+        swapArrayElements(arrOneDim, index, arrOneDim.length - 1 - count);
         count++;
     }
     var gameSet = [];
@@ -67,6 +65,21 @@ var gameSession = function(sessionNum){
     gameSet[2] = sessionNum;
     return gameSet;
 };
+
+
+var checkValueOfExpression = function(valueClick, expressionsList, expressionMath){
+    var id;
+    for (var i = 0; i < expressionsList.length; i++) {
+        // console.log(expressionsList[i].value);
+
+        if(expressionsList[i].value == valueClick){
+            id = i;
+            break;
+        }
+    }
+    return expressionsList[id].math == expressionMath;
+};
+
 
 
 module.exports = {

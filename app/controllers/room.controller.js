@@ -21,7 +21,7 @@ app.controller('RoomController', function ($scope,$http,$location,roomService,ga
     };
 
     $scope.btnRoomOnClick=function (id) {
-        console.log("Room id : "+id);
+        // console.log("Room id : "+id);
 
         getData('/game', function(data) {
             console.log(data);

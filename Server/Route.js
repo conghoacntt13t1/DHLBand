@@ -9,6 +9,8 @@ router.get('/game',function (req,res) {
     res.send(ArrTable);
 });
 
+router.get('/')
+
 
 module.exports=router;
 //
