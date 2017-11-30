@@ -1,16 +1,18 @@
+
 module.exports = function (server) {
     var io = require('socket.io').listen(server);
     console.log("The Server is starting");
 
     io.sockets.on('connection',function (socket) {
-        socket.on('join',function () {
-            
-        });
-        socket.on('spot-click',function () {
-            
+        console.log("a client has been connected");
+
+        socket.on('player-join',function () {
+
         });
 
-        socket.on('createTable')
-
+        socket.on('spot-click',function (data) {
+            // console.log(data);
+            console.log("blabla");
+        });
     });
 };

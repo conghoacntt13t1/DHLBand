@@ -72,12 +72,12 @@ var checkValueOfExpression = function(valueClick, expressionsList, expressionMat
     for (var i = 0; i < expressionsList.length; i++) {
         // console.log(expressionsList[i].value);
 
-        if(expressionsList[i].value == valueClick){
+        if(expressionsList[i].value === valueClick){
             id = i;
             break;
         }
     }
-    return expressionsList[id].math == expressionMath;
+    return expressionsList[id].math === expressionMath;
 };
 
 
